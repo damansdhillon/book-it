@@ -14,9 +14,12 @@ module.exports = {
         "dirty-yellow-dark": "#FFC007",
         "dirty-yellow-light": "#FFE187",
         "background": "var(--background)",
-        "primary-button": "var(--primary-button)",
         "primary": "var(--primary-color)",
       },
+      button: {
+        padding: "0.5rem 1rem",
+        borderRadius: "0.5rem",
+      }
     }
   },
   plugins: [

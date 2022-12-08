@@ -2,21 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("yellow-theme.css");
+
 :root {
     --background: theme("colors.gray.100");
 }
 
-/* Themes primary Color */
-
-
-[data-theme="dark"] {
-    --primary-color: theme("colors.dirty-yellow-dark");
-    --background: theme("colors.gray.900");
-    --primary-button: theme("colors.green.700");
+.button {
+    padding: theme("button.padding");
+    border-radius: theme("button.borderRadius");
 }
 
-[data-theme="light"] {
-    --primary-color: theme("colors.dirty-yellow-light");
-    --background: theme("colors.white");
-    --primary-button: theme("colors.green.200");
+.button:hover {
+    opacity: 0.8;
 }

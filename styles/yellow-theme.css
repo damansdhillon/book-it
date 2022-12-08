@@ -1,0 +1,21 @@
+[data-theme="yellow-dark"] {
+    background: theme("colors.gray.900");
+    color: white;
+    --primary-color: theme("colors.dirty-yellow-dark");
+}
+
+[data-theme="yellow-light"] {
+    background: theme("colors.white");
+    color: black;
+    --primary-color: theme("colors.dirty-yellow-light");
+}
+
+[data-theme="yellow-dark"] .button {
+    background: theme("colors.dirty-yellow-dark");
+    color: white;
+}
+
+[data-theme="yellow-light"] .button {
+    background: theme("colors.dirty-yellow-light");
+    color: black;
+}

@@ -2,7 +2,7 @@
   "name": "book-it",
   "version": "0.1.0",
   "private": true,
-  "style": "./styles/globals.css",
+  "style": ["./styles/globals.css"],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

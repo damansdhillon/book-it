@@ -1,5 +1,5 @@
+import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
-import { ThemeProvider } from "../lib/ThemeContext";
 import "../styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {

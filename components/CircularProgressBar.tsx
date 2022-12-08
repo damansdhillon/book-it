@@ -38,7 +38,7 @@ const CircularProgressBar = ({
         <path
           className="circle"
           fill="none"
-          stroke={backgroundColor}
+          stroke={backgroundColor ? backgroundColor : "#d2d6dc"}
           strokeWidth="4"
           strokeDasharray="100, 100"
           d="M18 2.0845
@@ -49,7 +49,7 @@ const CircularProgressBar = ({
         <path
           className="circle"
           fill="none"
-          stroke={strokeColor}
+          stroke={strokeColor ? strokeColor : "#3c8dbc"}
           strokeWidth="4"
           strokeDasharray={`${progress}, 100`}
           d="M18 2.0845
@@ -71,6 +71,13 @@ const CircularProgressBar = ({
       </svg>
     </>
   );
+};
+
+type CircularProgressProps = {
+  size: number;
+  strokeColor?: string;
+  backgroundColor?: string;
+  value: number;
 };
 
 export default CircularProgressBar;

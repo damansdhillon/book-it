@@ -2,13 +2,22 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./lib/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "dirty-yellow-dark": "#FFC007",
+        "dirty-yellow-light": "#FFE187",
+        "background": "var(--background)",
+        "primary-button": "var(--primary-button)",
+        "primary": "var(--primary-color)",
+      },
+    }
   },
   plugins: [
     plugin(function ({ addUtilities }) {

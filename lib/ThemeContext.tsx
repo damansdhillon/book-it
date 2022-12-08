@@ -1,29 +1,5 @@
 import { createContext, useContext, useState } from "react";
 
-interface ThemeContextProps {
-  theme: Theme;
-  toggleTheme: () => void;
-}
-
-interface Theme {
-  name: string;
-
-  colors: {
-    primary: string;
-    secondary: string;
-  };
-  navbar: {
-    backgroundColor: string;
-    textColor: string;
-    color: string;
-  };
-  page: {
-    backgroundColor: string;
-    textColor: string;
-    color: string;
-  };
-}
-
 const lightTheme: Theme = {
   name: "light",
   colors: {
@@ -31,14 +7,28 @@ const lightTheme: Theme = {
     secondary: "#fff",
   },
   navbar: {
-    backgroundColor: "#fff",
+    backgroundColor: "#DADADA",
+    textColor: "#F1F1F1",
+    color: "#000",
+    shadowColor: "shadow-gray-500",
+  },
+  page: {
+    backgroundColor: "#E9E9E9",
     textColor: "#000",
     color: "#000",
   },
-  page: {
-    backgroundColor: "#fff",
-    textColor: "#000",
+  rightSidebar: {
+    backgroundColor: "#DADADA",
+    textColor: "#F1F1F1",
     color: "#000",
+    custom: {
+      headerBackgroundColor: "#DADADA",
+      fotterBackgroundColor: "#DADADA",
+      progressBar: {
+        backgroundColor: "#DADADA",
+        strokeColor: "#f9c74f",
+      },
+    },
   },
 };
 
@@ -49,14 +39,28 @@ const darkTheme: Theme = {
     secondary: "#000",
   },
   navbar: {
-    backgroundColor: "#000",
+    backgroundColor: "#8A8A8A",
+    textColor: "#fff",
+    color: "#fff",
+    shadowColor: "shadow-gray-400",
+  },
+  page: {
+    backgroundColor: "#404040",
     textColor: "#fff",
     color: "#fff",
   },
-  page: {
-    backgroundColor: "#000",
+  rightSidebar: {
+    backgroundColor: "#20202a",
     textColor: "#fff",
     color: "#fff",
+    custom: {
+      headerBackgroundColor: "#22222d",
+      fotterBackgroundColor: "#22222d",
+      progressBar: {
+        backgroundColor: "#1e1e28",
+        strokeColor: "#f9c74f",
+      },
+    },
   },
 };
 

@@ -2,20 +2,28 @@
     background: theme("colors.gray.900");
     color: white;
     --primary-color: theme("colors.dirty-yellow-dark");
+    --right-sidebar-background: theme("colors.midnight-gray");
 }
 
 [data-theme="yellow-light"] {
     background: theme("colors.white");
     color: black;
     --primary-color: theme("colors.dirty-yellow-light");
+    --right-sidebar-background: theme("colors.gray.300");
 }
 
 [data-theme="yellow-dark"] .button {
     background: theme("colors.dirty-yellow-dark");
     color: white;
 }
+[data-theme="yellow-dark"] .sidebar {
+    background: theme("colors.midnight-gray");
+}
 
 [data-theme="yellow-light"] .button {
     background: theme("colors.dirty-yellow-light");
     color: black;
+}
+[data-theme="yellow-light"] .sidebar {
+    background: theme("colors.gray.200");
 }

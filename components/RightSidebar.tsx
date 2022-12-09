@@ -6,7 +6,7 @@ export const RightSidebar = (props: RightSidebarProps) => {
       <div
         className={`${props.classes} sidebar flex h-screen flex-col justify-between`}
       >
-        <div className="flex h-[30rem] max-h-[20rem] min-h-[15rem] flex-col items-center justify-center gap-2 bg-gray-700">
+        <div className="flex h-[15rem] max-h-[20rem] min-h-[10rem] flex-col items-center justify-center gap-2 bg-gray-700">
           <Image
             className="rounded-full"
             src="/assets/images/avatar.jpeg"

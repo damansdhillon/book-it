@@ -15,6 +15,10 @@ export const useWindowDimensions = () => {
   });
 
   useEffect(() => {
+    // Set the initial dimentions
+    setWindowDimensions(getWindowDimensions());
+
+    // Event handler functions
     const handleResize = () => {
       setWindowDimensions(getWindowDimensions());
     };

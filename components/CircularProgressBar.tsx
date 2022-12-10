@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const CircularProgressBar = ({
-  size = 100,
+  size,
   value = 0,
   backgroundColor,
   strokeColor,
@@ -14,7 +14,6 @@ const CircularProgressBar = ({
     interval.current && clearInterval(interval.current);
     interval.current = setInterval(() => {
       setProgress((val) => {
-        console.log(val);
         if (val >= value) {
           oldValue.current = value;
           clearInterval(interval.current);
@@ -22,7 +21,7 @@ const CircularProgressBar = ({
         }
         return val + 1;
       });
-    }, 10);
+    }, 20);
 
     return () => clearInterval(interval.current);
   }, [value]);
@@ -30,16 +29,12 @@ const CircularProgressBar = ({
   return (
     <>
       {/* Circular Progress bar SVG*/}
-      <svg
-        className={`w-${size} h-${size}`}
-        viewBox="0 0 36 36"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg className={`h-14 w-14`} viewBox="0 0 36 36">
         <path
-          className="circle"
-          fill="none"
-          stroke={backgroundColor ? backgroundColor : "#d2d6dc"}
-          strokeWidth="4"
+          className="text-gray-500"
+          stroke="currentColor"
+          fill="transparent"
+          strokeWidth="3"
           strokeDasharray="100, 100"
           d="M18 2.0845
           a 15.9155 15.9155 0 0 1 0 31.831
@@ -47,10 +42,11 @@ const CircularProgressBar = ({
         />
         {/* Path animating stroke from 0 - value */}
         <path
-          className="circle"
-          fill="none"
-          stroke={strokeColor ? strokeColor : "#3c8dbc"}
-          strokeWidth="4"
+          className="text-primary"
+          stroke="currentColor"
+          fill="transparent"
+          strokeWidth="3"
+          strokeLinecap="round"
           strokeDasharray={`${progress}, 100`}
           d="M18 2.0845
           a 15.9155 15.9155 0 0 1 0 31.831
@@ -63,7 +59,7 @@ const CircularProgressBar = ({
           fill="#666"
           textAnchor="middle"
           // font size is relative to the radius of the circle
-          fontSize="0.4em"
+          fontSize="0.4rem"
         >
           {/* Animate the text value */}
           <tspan className="percentage-value">{progress}%</tspan>
@@ -74,7 +70,7 @@ const CircularProgressBar = ({
 };
 
 type CircularProgressProps = {
-  size: number;
+  size: string;
   strokeColor?: string;
   backgroundColor?: string;
   value: number;

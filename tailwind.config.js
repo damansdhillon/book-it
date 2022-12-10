@@ -24,7 +24,7 @@ module.exports = {
       },
       sidebar: {
         background: "var(--right-sidebar-background)",
-      }
+      },
     }
   },
   plugins: [

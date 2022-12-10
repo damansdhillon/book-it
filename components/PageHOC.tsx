@@ -14,10 +14,9 @@ export default function PageHOC({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (!auth?.isLogged) {
-      console.log("Logged in");
       router.push("/auth/login");
     }
-  }, []);
+  }, [auth, router]);
 
   useEffect(() => {
     console.log(width);
@@ -30,13 +29,23 @@ export default function PageHOC({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <div className={`he-full inset-0 flex w-full justify-evenly`}>
-        <div className="grow-4 absolute inset-0 right-auto flex">
+      <div className={`inset-0 flex h-full w-full justify-evenly`}>
+        <div className={`grow-4 absolute inset-0 right-auto flex`}>
           <RightSidebar
-            classes={`w-[15rem] transition-all duration-500 ease-in-out ${
-              showRightSidebar ? "opacity-100" : "opacity-0"
+            classes={`w-[15rem] transition-all duration-500 ease-in-out opacity-100 ${
+              showRightSidebar ? "" : "invisible opacity-0"
             }`}
           />
+          {!showRightSidebar && (
+            <div>
+              <button
+                className="button"
+                onClick={() => setShowRightSidebar(true)}
+              >
+                Show
+              </button>
+            </div>
+          )}
         </div>
         <div className="flex grow-[15]">{children}</div>
         <div className="absolute inset-0 left-auto flex w-[5rem] grow-[2]">

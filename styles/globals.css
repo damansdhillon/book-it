@@ -8,6 +8,10 @@
     --background: theme("colors.gray.100");
 }
 
+.grayed-out {
+    opacity: 0.6;
+}
+
 .button {
     padding: theme("button.padding");
     border-radius: theme("button.borderRadius");

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import CircularProgressBar from "./CircularProgressBar";
 import HorizontalProgressBar from "./HorizontalProgressBar";
+import CrossIconButton from "./SVGButtons/CrossIconButton";
 
 export const RightSidebar = (props: RightSidebarProps) => {
   // useRef to store array of numbers between 10-100
@@ -80,27 +81,7 @@ export const RightSidebar = (props: RightSidebarProps) => {
       >
         {props.showCloseButton && (
           <>
-            <div
-              className="absolute flex h-8 w-full cursor-pointer items-center justify-end pr-2"
-              onClick={() => {
-                props.setShowRightSidebar(false);
-              }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="h-6 w-6 text-primary"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </div>
+            <CrossIconButton onClick={() => props.setShowRightSidebar(false)} />
           </>
         )}
         <div className="flex max-h-[20rem] min-h-[15rem] flex-col items-center justify-center gap-2">
